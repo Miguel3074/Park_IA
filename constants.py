@@ -47,29 +47,29 @@ MAX_STEERING_ANGLE = 40
 # --- Parking Success Criteria ---
 PARKING_MIN_VELOCITY = 0.5
 PARKING_MAX_ANGLE_DIFF = 15
-PARKING_MAX_DIST_TO_CENTER = CAR_WIDTH * 0.75 # Adjusted based on car size
+PARKING_MAX_DIST_TO_CENTER = CAR_WIDTH * 0.75
 
 # --- Genetic Algorithm Parameters ---
-POPULATION_SIZE = 100 # Number of cars per generation
-GENERATIONS = 200 # Total number of generations to run
-SIMULATION_DURATION_SECONDS = 10 # How long each car attempts to park (in seconds)
+POPULATION_SIZE = 50 
+GENERATIONS = 200 
+SIMULATION_DURATION_SECONDS = 8 
 SIMULATION_DURATION_TICKS = SIMULATION_DURATION_SECONDS * FPS
 
-MUTATION_RATE = 0.15 # Probability of a gene mutating
-SELECTION_PERCENTAGE = 0.2 # Percentage of top cars selected for reproduction
+MUTATION_RATE = 0.15 
+SELECTION_PERCENTAGE = 0.2
 
 # --- Neural Network Parameters ---
-INPUT_SIZE = 10 # Number of inputs to the neural network (see car.py get_state)
-HIDDEN_SIZE = 32 # Number of neurons in the hidden layer
-OUTPUT_SIZE = 5 # Number of possible actions (forward, reverse, steer_left, steer_right, brake)
+INPUT_SIZE = 10 
+HIDDEN_SIZE = 64 
+OUTPUT_SIZE = 5 
 
 # --- Reward Parameters ---
-COLLISION_PENALTY = -100000
-PARKING_BONUS = 1000000
-DISTANCE_REWARD_MULTIPLIER = 5 # Reward for getting closer (initial - current)
-ANGLE_PENALTY_MULTIPLIER = -5 # Penalty for angle difference to spot heading
-ALMOST_PARKED_BONUS = 30 # Bonus for being in spot and close to angle, even if not perfectly parked
-SPEED_PENALTY_MULTIPLIER = -0.05 # Small penalty for high speed when close to spot
-STEP_PENALTY = -100 # Small penalty per time step to encourage faster parking
-STOPPED_PENALTY = -4000
-ALIGNMENT_REWARD = 5
+COLLISION_PENALTY = -99
+PARKING_BONUS = 999999
+DISTANCE_REWARD_MULTIPLIER = 5
+ANGLE_PENALTY_MULTIPLIER = -1
+ALMOST_PARKED_BONUS = 300
+SPEED_PENALTY_MULTIPLIER = -0.00
+STEP_PENALTY = -1
+STOPPED_PENALTY = -10
+ALIGNMENT_REWARD = 1
